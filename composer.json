@@ -1,0 +1,39 @@
+{
+  "name": "phapi/middleware-postbox",
+  "description": "Postbox has one simple task; check if the Content-Type of the request is supported",
+  "keywords": [
+    "middleware", "content-type", "postbox", "phapi"
+  ],
+  "version": "1.0.0",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "homepage": "http://phapi.github.io",
+  "authors": [
+    {
+      "name": "Peter Ahinko",
+      "email": "peter@ahinko.se",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "phapi/contract": "dev-master",
+    "phapi/exception": "dev-master",
+    "psr/http-message": "1.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.6.*",
+    "mockery/mockery": "0.9.*",
+    "codeclimate/php-test-reporter": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "Phapi\\Middleware\\PostBox\\": "src/Phapi/Middleware/PostBox/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Phapi\\Tests\\Middleware\\PostBox\\": "tests/Phapi/Middleware/Postbox/"
+    }
+  }
+}
