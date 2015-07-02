@@ -8,6 +8,11 @@ This middleware is by default included in the [Phapi Framework](https://github.c
 $ php composer.phar require phapi/middleware-postbox:1.*
 ```
 
+## Configuration
+The middleware itself does not have any configuration options.
+
+See the [configuration documentation](http://phapi.github.io/started/configuration/) for more information about how to configure the integration with the Phapi Framework.
+
 ## Phapi
 This middleware is a Phapi package used by the [Phapi Framework](https://github.com/phapi/phapi). The middleware are also [PSR-7](https://github.com/php-fig/http-message) compliant and implements the [Phapi Middleware Contract](https://github.com/phapi/contract).
 
