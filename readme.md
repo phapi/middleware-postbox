@@ -1,4 +1,9 @@
 # Postbox Middleware
+
+[![Build status](https://img.shields.io/travis/phapi/middleware-postbox.svg?style=flat-square)](https://travis-ci.org/phapi/middleware-postbox)
+[![Code Climate](https://img.shields.io/codeclimate/github/phapi/middleware-postbox.svg?style=flat-square)](https://codeclimate.com/github/phapi/middleware-postbox)
+[![Test Coverage](https://img.shields.io/codeclimate/coverage/github/phapi/middleware-postbox.svg?style=flat-square)](https://codeclimate.com/github/phapi/middleware-postbox/coverage)
+
 The Postbox middleware has one simple task; take the Content-Type header from the request and check if there is a Deserializer that supports the mime type. If the mime type isn't supported an <code>415 UnsupportedMediaType</code> exception will be thrown.
 
 ## Installation
