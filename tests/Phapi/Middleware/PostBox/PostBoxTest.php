@@ -34,6 +34,30 @@ class PostOfficeTest extends TestCase
             }
         );
     }
+    
+        public function testWithCharset()
+    {
+        $container = \Mockery::mock('Phapi\Contract\Di\Container');
+        $container->shouldReceive('offsetExists')->with('contentTypes')->andReturn(true);
+        $container->shouldReceive('offsetGet')->with('contentTypes')->andReturn(['application/json', 'text/json']);
+
+        $request = \Mockery::mock('Psr\Http\Message\ServerRequestInterface');
+        $request->shouldReceive('hasHeader')->with('Content-Type')->andReturn(true);
+        $request->shouldReceive('getHeaderLine')->with('Content-Type')->andReturn('application/json;charset=utf-8');
+
+        $response = \Mockery::mock('Psr\Http\Message\ResponseInterface');
+
+        $middleware = new PostBox();
+        $middleware->setContainer($container);
+
+        $middleware(
+            $request,
+            $response,
+            function ($request, $response) {
+                return $response;
+            }
+        );
+    }
 
     public function testInvokeNoSerializersException()
     {
