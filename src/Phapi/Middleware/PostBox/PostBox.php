@@ -65,6 +65,9 @@ class PostBox implements Middleware
             if (!empty($header)) {
                 // Get priorities
                 $supported = $this->container['contentTypes'];
+                
+                // Remove included parts that aren't part of the RFC
+                $header = preg_replace('/(;[a-z]*=[a-z0-9]*)/i', '', $header);
 
                 // Check if the content type is supported
                 if (!in_array($header, $supported)) {
