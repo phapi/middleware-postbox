@@ -68,6 +68,8 @@ class PostBox implements Middleware
                 
                 // Remove included parts that aren't part of the RFC
                 $header = preg_replace('/(;[a-z]*=[a-z0-9\-]*)/i', '', $header);
+                // Replace the original header value
+                $request = $request->withHeader('Content-Type', $header);
 
                 // Check if the content type is supported
                 if (!in_array($header, $supported)) {
