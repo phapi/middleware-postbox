@@ -4,7 +4,7 @@
   "keywords": [
     "middleware", "content-type", "postbox", "phapi"
   ],
-  "version": "1.0.1",
+  "version": "1.0.2",
   "minimum-stability": "stable",
   "license": "MIT",
   "homepage": "http://phapi.github.io",
